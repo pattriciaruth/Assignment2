@@ -1,3 +1,4 @@
+
 public class Ride {
     private String name;
     private String type; // e.g., Roller Coaster, Water Ride
@@ -49,5 +50,20 @@ public class Ride {
     public void setOperator(Employee operator) {
         this.operator = operator;
     }
+
+
+    
+
+public interface RideInterface {
+    void addVisitorToQueue(Visitor visitor);
+    void removeVisitorFromQueue();
+    void printQueue();
+    void runOneCycle();
+    void addVisitorToHistory(Visitor visitor);
+    boolean checkVisitorFromHistory(Visitor visitor);
+    int numberOfVisitors();
+    void printRideHistory();
+}
+
 }
 
