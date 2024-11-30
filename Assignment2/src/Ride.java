@@ -94,7 +94,7 @@ public class Ride implements RideInterface {
 
     // Export Ride History to a file
     public void exportRideHistory(String fileName) {
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(fileName))) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("ride_history.txt"))) {
             for (Visitor visitor : rideHistory) {
                 writer.write(visitor.toString()); // Use Visitor's toString method for details
                 writer.newLine(); // Add a new line for each visitor

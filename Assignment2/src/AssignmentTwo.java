@@ -11,6 +11,9 @@ public class AssignmentTwo {
 
         // Part Five - Run a ride cycle
         partFive();
+
+        //Part 6 – Writing to a file
+        partSix();
             }
         
             public static void partThree() {
@@ -95,9 +98,31 @@ public class AssignmentTwo {
     }
     
 
-    public void partSix() {
-        // Code for Part Six
+    public static void partSix() {
+        // Create a new Ride
+        Employee operator = new Employee("Jane Doe", 28, "789 Elm Street", "Ride Operator", 45000.0);
+        Ride ride = new Ride("Cyclone", "Roller Coaster", true, operator, 4);
+    
+        // Add a minimum of 5 Visitors to the Ride (LinkedList - Ride History)
+        ride.addVisitorToHistory(new Visitor("Alice Smith", 25, "123 Park Avenue", "VIP", true));
+        ride.addVisitorToHistory(new Visitor("Bob Johnson", 30, "456 Maple Drive", "Regular", false));
+        ride.addVisitorToHistory(new Visitor("Charlie Brown", 35, "789 Elm Street", "Regular", true));
+        ride.addVisitorToHistory(new Visitor("Daisy Miller", 22, "101 Oak Lane", "VIP", true));
+        ride.addVisitorToHistory(new Visitor("Ethan White", 40, "202 Pine Road", "Regular", false));
+    
+        ride.runOneCycle();
+        ride.exportRideHistory("ride_history.txt");
+        
+        // Export the ride history to a file
+        String fileName = "ride_history.txt";
+
+        ride.exportRideHistory(fileName);
+
+
+        System.out.println("Exporting ride history to " + fileName);
+
     }
+    
 
     public void partSeven() {
         // Code for Part Seven
