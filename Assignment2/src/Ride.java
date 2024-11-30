@@ -146,5 +146,22 @@ public class Ride implements RideInterface {
     public void setRideHistory(LinkedList<Visitor> rideHistory) {
         this.rideHistory = rideHistory;
     }
+
+    @Override
+    public void addVisitorToHistory(Visitor visitor) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public boolean checkVisitorFromHistory(Visitor visitor) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public int numberOfVisitors() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    
 }
 
