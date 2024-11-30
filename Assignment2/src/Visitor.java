@@ -7,8 +7,7 @@ public class Visitor extends Person {
     // Default Constructor
     public Visitor() {
         super(); // Call the Person default constructor
-        this.ticketType = "Regular";
-        this.hasAccessToAllRides = false;
+        
     }
 
     // Parameterized Constructor

@@ -1,5 +1,5 @@
-Name: Alice Smith, Age: 0, Address: 123 Park Avenue, Type: VIP, Has Paid: true
-Name: Bob Johnson, Age: 0, Address: 456 Maple Drive, Type: Regular, Has Paid: false
-Name: Charlie Brown, Age: 0, Address: 789 Elm Street, Type: Regular, Has Paid: true
-Name: Daisy Miller, Age: 0, Address: 101 Oak Lane, Type: VIP, Has Paid: true
-Name: Ethan White, Age: 0, Address: 202 Pine Road, Type: Regular, Has Paid: false
+Name: Alice Smith, Age: 25, Address: 123 Park Avenue, Type: VIP, Has Paid: true
+Name: Bob Johnson, Age: 30, Address: 456 Maple Drive, Type: Regular, Has Paid: false
+Name: Charlie Brown, Age: 35, Address: 789 Elm Street, Type: Regular, Has Paid: true
+Name: Daisy Miller, Age: 22, Address: 101 Oak Lane, Type: VIP, Has Paid: true
+Name: Ethan White, Age: 40, Address: 202 Pine Road, Type: Regular, Has Paid: false

@@ -127,11 +127,14 @@ public class AssignmentTwo {
             }
             
         
-            public static void partSeven() {
+        public static void partSeven() {
         // Code for Part Seven
         // Create a new Ride
         Employee operator = new Employee("Sarah Lee", 35, "456 Oak Lane", "Ride Supervisor", 52000.0);
         Ride ride = new Ride("Thunderbolt", "Water Slide", false, operator, 5);
+
+        ride.addVisitorToHistory(new Visitor("Emily Davis", 15, "123 Forest Road", "Regular", true));
+        ride.addVisitorToHistory(new Visitor("Michael Brown", 40, "456 Pine Street", "VIP", false));
     
     
         // Import the file created in the previous part

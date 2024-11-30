@@ -12,7 +12,7 @@ public abstract class Person {
     //Parameterizing Constructor
     public Person (String Name, int age, String Address){
         this.Name = Name;
-        this.Age = Age;
+        this.Age = age;
         this.Address = Address;
         
     }
