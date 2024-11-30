@@ -1,4 +1,7 @@
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.LinkedList;
@@ -102,6 +105,32 @@ public class Ride implements RideInterface {
             System.out.println("Ride history exported successfully to " + fileName);
         } catch (IOException e) {
             System.out.println("An error occurred while exporting ride history: " + e.getMessage());
+        }
+    }
+
+    // Import Ride History from a file
+    public void importRideHistory(String fileName) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                // Parse each line to create a Visitor object
+                String[] parts = line.split(", "); // Split the line into parts
+                String Name = parts[0].split(": ")[1];
+                int Age = Integer.parseInt(parts[1].split(": ")[1]);
+                String Address = parts[2].split(": ")[1];
+                String ticketType = parts[3].split(": ")[1];
+                boolean hasAccessToAllRides = Boolean.parseBoolean(parts[4].split(": ")[1]);
+
+                Visitor visitor = new Visitor(Name, Age, Address, ticketType, hasAccessToAllRides);
+                rideHistory.add(visitor); // Add to the rideHistory list
+            }
+            System.out.println("Ride history imported successfully from " + fileName);
+        } catch (FileNotFoundException e) {
+            System.out.println("Error: File not found - " + fileName);
+        } catch (IOException e) {
+            System.out.println("Error: Unable to read the file - " + e.getMessage());
+        } catch (Exception e) {
+            System.out.println("Error: An unexpected error occurred - " + e.getMessage());
         }
     }
 
