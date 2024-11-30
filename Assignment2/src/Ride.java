@@ -1,3 +1,6 @@
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -23,6 +26,9 @@ public class Ride implements RideInterface {
         this.rideHistory = new LinkedList<>();
     }
 
+
+
+    
     // Run one cycle
     @Override
     public void runOneCycle() {
@@ -83,6 +89,19 @@ public class Ride implements RideInterface {
         System.out.println("Visitors who have taken the ride:");
         for (Visitor visitor : rideHistory) {
             System.out.println(visitor.getName());
+        }
+    }
+
+    // Export Ride History to a file
+    public void exportRideHistory(String fileName) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(fileName))) {
+            for (Visitor visitor : rideHistory) {
+                writer.write(visitor.toString()); // Use Visitor's toString method for details
+                writer.newLine(); // Add a new line for each visitor
+            }
+            System.out.println("Ride history exported successfully to " + fileName);
+        } catch (IOException e) {
+            System.out.println("An error occurred while exporting ride history: " + e.getMessage());
         }
     }
 
@@ -149,19 +168,19 @@ public class Ride implements RideInterface {
 
     @Override
     public void addVisitorToHistory(Visitor visitor) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        rideHistory.add(visitor);
+        System.out.println(visitor.getName() + " added to ride history.");
     }
 
     @Override
     public boolean checkVisitorFromHistory(Visitor visitor) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return rideHistory.contains(visitor);
     }
 
     @Override
     public int numberOfVisitors() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return rideHistory.size();
     }
-
-    
 }
+
 
